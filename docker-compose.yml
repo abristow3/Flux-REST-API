@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  config-api:
+    build: .
+    container_name: config-api
+    ports:
+      - "5000:5000"  # Exposes port to host
+    volumes:
+      - ./config.json:/app/config.json  # Persist config file
+    restart: unless-stopped
